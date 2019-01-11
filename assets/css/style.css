@@ -1,0 +1,11 @@
+#banner{
+  background-image: url("../img/trainImg.jpeg");
+  background-position: center; 
+  background-size: auto;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-shadow: 4px 4px black;
+}
+
+label{
+  font-weight: bold;
+}
