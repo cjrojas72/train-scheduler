@@ -48,10 +48,13 @@ $(document).ready(function() {
     console.log(childSnap.val().time);
     console.log(childSnap.val().frequency);
 
+    //store time to be used
     var now = moment();
-    var trainTime = moment(childSnap.val().time);
+    var trainTime = moment(childSnap.val().time, "HH:mm");
+    var minsAway =  trainTime.diff(now, "minutes") + "m";
 
     console.log(now, trainTime);
+    console.log(minsAway);
     
 
     // lists all objects in database to table
@@ -60,7 +63,7 @@ $(document).ready(function() {
       "<td>" + childSnap.val().destination + "</td>" +
       "<td>" + childSnap.val().frequency + "</td>" +
       "<td>" + childSnap.val().time + "</td>" +
-      "<td>5"+ moment().startOf('minute').fromNow() +"</td></tr>");
+      "<td>"+ minsAway +"</td></tr>");
 
     // Handle the errors
   }, function(errorObject) {
